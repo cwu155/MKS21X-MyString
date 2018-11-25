@@ -19,8 +19,12 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
   }
 
   public char charAt(int index){
+    try {
     return data[index];
+  } catch (ArrayIndexOutOfBoundsException e) {
+    return 'N';
   }
+}
 
   public CharSequence subSequence(int a, int b){
     String result = "";
@@ -33,17 +37,22 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
   public String toString(){
     String result = "";
     for (int i = 0; i < data.length; i++){
-      if (i == data.length-1){
         result += data[i];
-      } else {
-      result += data[i] + ',';
-      }
     }
     return result;
   }
 
   public int compareTo(CharSequence s){
-
+    if (this.length() > s.length()){
+      return 1;
+    }
+    if (this.length() < s.length()){
+      return -1;
+    }
+    if (this.length() == s.length()){
+      return 0;
+    }
+    return this.compareTo(s);
   }
 
 
