@@ -31,14 +31,20 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
   }
 
   public String toString(){
-
+    String result = "";
+    for (int i = 0; i < data.length; i++){
+      if (i == data.length-1){
+        result += data[i];
+      } else {
+      result += data[i] + ',';
+      }
+    }
+    return result;
   }
 
   public int compareTo(CharSequence s){
 
   }
-
-
 
 
 }
