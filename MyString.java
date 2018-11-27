@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class MyString implements CharSequence,Comparable<CharSequence>{
   //Need to throw exceptions
   private char[] data;
@@ -28,11 +30,16 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
 
   public CharSequence subSequence(int a, int b){
     String result = "";
+    try {
     for (int i = a; i < b; i++){
         result += data[i];
       }
     return result;
+  } catch (IndexOutOfBoundsException e){
+    return "Boohoo";
   }
+}
+
 
   public String toString(){
     String result = "";
@@ -43,17 +50,21 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
   }
 
   public int compareTo(CharSequence s){
-    if (this.length() > s.length()){
-      return 1;
-    }
-    if (this.length() < s.length()){
-      return -1;
-    }
-    if (this.length() == s.length()){
-      return 0;
-    }
-    return this.compareTo(s);
+    String original = data.toString();
+    int difference = 0;
+    try {
+    for (int i = 0; i < s.length(); i++){
+      if ((int) original.charAt(i) > (int) s.charAt(i)){
+        difference += 1;
+      } else if ((int) original.charAt(i) > (int) s.charAt(i)){
+        difference -= 1;
+      } else {
+        return 0;
+        }
+      }
+    return difference;
+  } catch (StringIndexOutOfBoundsException e){
+  return (original.length() - s.length());
   }
-
-
+}
 }
