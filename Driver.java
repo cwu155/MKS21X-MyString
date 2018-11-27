@@ -87,7 +87,7 @@ public class Driver {
         }
         System.out.println("Yayyy you're so good at subSequencing!!");
 
-      //  testing subsSequence exceptions sighhh
+      // testing subsSequence exceptions sighhh
         // for (int idx = 1; idx < 10; idx++) {
         //     try {
         //         int start = 1 + Math.abs(rng.nextInt()) % (length - 1); //insures start > 0
@@ -98,44 +98,45 @@ public class Driver {
         //     } catch (IndexOutOfBoundsException e) {
         //     }
         // }
-        //
-        // for (int idx = 0; idx < 10; idx++) {
-        //     try { //tests negative starts basically subS(negative, anything ok)
-        //         CharSequence testSub = test.subSequence(-1 * Math.abs(rng.nextInt()) - 1, Math.abs(rng.nextInt() % length));
-        //     } catch (ArrayIndexOutOfBoundsException e) {
-        //         System.out.println("Awww you failed subS exception");
-        //         e.printStackTrace();
-        //         System.exit(1);
-        //     } catch (IndexOutOfBoundsException e) {
-        //     } catch (Exception e) { //who knows what kind of errors you'll make :))
-        //         System.out.println("Awww you failed subS exception");
-        //         e.printStackTrace();
-        //         System.exit(1);
-        //     }
-        // }
-        //
-        // for (int idx = 0; idx < 20; idx++) {
-        //     try { //tests if either thing is out of bounds aka subS(bad/okay, bad)
-        //         if (idx < 10) { //tests subS(okay, bad) 10 times
-        //             CharSequence testSub = test.subSequence(Math.abs(rng.nextInt()) % length, length + Math.abs(rng.nextInt()));
-        //         } else { //tests subS(bad, bad) 10 times
-        //             int start = length + Math.abs(rng.nextInt()) % length;
-        //             int end = start + Math.abs(rng.nextInt()) + length;
-        //             CharSequence testSub = test.subSequence(start, end);
-        //         }
-        //     } catch (ArrayIndexOutOfBoundsException e) {
-        //         System.out.println("Awww you failed subS exception");
-        //         e.printStackTrace();
-        //         System.exit(1);
-        //     } catch (IndexOutOfBoundsException e) {
-        //     } catch (Exception e) { //who knows what kind of errors you'll make :))
-        //         System.out.println("Awww you failed subS exception");
-        //         e.printStackTrace();
-        //         System.exit(1);
-        //     }
-        // }
-        // System.out.println("Yayy you can throw an eXcEptIoN for subSequence");
-        // //I have wasted 1 hour of my life so far end me now
+
+        System.out.println(test.subSequence(7, 0));
+        for (int idx = 0; idx < 10; idx++) {
+            try { //tests negative starts basically subS(negative, anything ok)
+                CharSequence testSub = test.subSequence(-1 * Math.abs(rng.nextInt()) - 1, Math.abs(rng.nextInt() % length));
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Awww you failed subS exception");
+                e.printStackTrace();
+                System.exit(1);
+            } catch (IndexOutOfBoundsException e) {
+            } catch (Exception e) { //who knows what kind of errors you'll make :))
+                System.out.println("Awww you failed subS exception");
+                e.printStackTrace();
+                System.exit(1);
+            }
+        }
+
+        for (int idx = 0; idx < 20; idx++) {
+            try { //tests if either thing is out of bounds aka subS(bad/okay, bad)
+                if (idx < 10) { //tests subS(okay, bad) 10 times
+                    CharSequence testSub = test.subSequence(Math.abs(rng.nextInt()) % length, length + Math.abs(rng.nextInt()));
+                } else { //tests subS(bad, bad) 10 times
+                    int start = length + Math.abs(rng.nextInt()) % length;
+                    int end = start + Math.abs(rng.nextInt()) + length;
+                    CharSequence testSub = test.subSequence(start, end);
+                }
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Awww you failed subS exception");
+                e.printStackTrace();
+                System.exit(1);
+            } catch (IndexOutOfBoundsException e) {
+            } catch (Exception e) { //who knows what kind of errors you'll make :))
+                System.out.println("Awww you failed subS exception");
+                e.printStackTrace();
+                System.exit(1);
+            }
+        }
+        System.out.println("Yayy you can throw an eXcEptIoN for subSequence");
+        //I have wasted 1 hour of my life so far end me now
 
         //testing toString Yayyy
         String ansString = ans.toString();

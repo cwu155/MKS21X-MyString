@@ -34,11 +34,12 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
     for (int i = a; i < b; i++){
         result += data[i];
       }
-    return result;
-  } catch (IndexOutOfBoundsException e){
+        return result;
+    } catch (IndexOutOfBoundsException e){
     return "Boohoo";
+    }
   }
-}
+
 
 
   public String toString(){
